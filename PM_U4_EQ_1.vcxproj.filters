@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Object Include="..\..\..\..\..\..\Irvine\Lib32\Irvine32_Library\Irvine32.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Plantilla_.asm" />
+    <MASM Include="P_1_IntroVectores_.asm" />
+    <MASM Include="P_2_IntroVectores2_.asm" />
+    <MASM Include="P_3_Vector_.asm" />
+    <MASM Include="P_4_Vector2_.asm" />
+    <MASM Include="E_1_Mediana_.asm" />
+    <MASM Include="P_5_Vector3_.asm" />
+    <MASM Include="P_6_Vector4_.asm" />
+  </ItemGroup>
+</Project>

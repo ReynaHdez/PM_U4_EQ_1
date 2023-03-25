@@ -24,12 +24,19 @@
   <ItemGroup>
     <MASM Include="E_1_Mediana_.asm" />
     <MASM Include="Plantilla_.asm" />
+    <MASM Include="P_10_CuantosMenoresQueX_.asm" />
     <MASM Include="P_1_IntroVectores_.asm" />
     <MASM Include="P_2_IntroVectores2_.asm" />
     <MASM Include="P_3_Vector_.asm" />
     <MASM Include="P_4_Vector2_.asm" />
     <MASM Include="P_5_Vector3_.asm" />
     <MASM Include="P_6_Vector4_.asm" />
+    <MASM Include="P_7_RecorridoArreglos_.asm" />
+    <MASM Include="P_8_ValorMayor_.asm" />
+    <MASM Include="P_9_ValorMenor_.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\PM_U3_EQ_1\PM_U3_EQ_1\Macros.inc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -94,7 +101,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>main1</EntryPointSymbol>
+      <EntryPointSymbol>main10</EntryPointSymbol>
       <ImportLibrary>c:/Irvine</ImportLibrary>
     </Link>
     <MASM>
@@ -128,6 +135,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>main1</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -22,7 +22,7 @@ vector dword 10, 20, 30, 40, 50
 	
 		;Lógica del Programa
 		;esi /edi
-		mov esi, 1
+		mov esi, 0
 
 		mov eax, vector[esi]
 		call writedec

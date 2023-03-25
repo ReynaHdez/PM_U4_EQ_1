@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.34.31937.0	    03/19/23 17:33:57
+Microsoft (R) Macro Assembler Version 14.34.31937.0	    03/25/23 16:37:51
 NombreProgram						     Page 1 - 1
 
 
@@ -32,36 +32,87 @@ Microsoft (R) Macro Assembler Version 14.34.31937.0	    03/19/23 17:33:57
 			      C .NOLIST
 			      C .LIST
 			      C 
+				INCLUDE Macros.inc
+			      C .NOLIST
+			      C .LIST
+			      C 
 
  00000000			.data
 				; Área de Declaración de Variables
- 00000000 0000000A		vector dword 10, 20, 30, 40, 50
-	   00000014
-	   0000001E
-	   00000028
-	   00000032
+ 00000000 0000000A		vector_10 dword 10, 14, 19, 1, 3, 4
+	   0000000E
+	   00000013
+	   00000001
+	   00000003
+	   00000004
 
+ 00000018 45 6C 20 76 61	msj_println_10 db "El valor menor es: ", 0
+	   6C 6F 72 20 6D
+	   65 6E 6F 72 20
+	   65 73 3A 20 00
+ 0000002C 49 6E 67 72 65	msj_pidex db "Ingrese el valor de x:", 0
+	   73 65 20 65 6C
+	   20 76 61 6C 6F
+	   72 20 64 65 20
+	   78 3A 00
  00000000			.code
 
- 00000000				main1 PROC
+ 00000000				main10 PROC
 					
 						;Lógica del Programa
-						;esi /edi
- 00000000  BE 00000001				mov esi, 1
 
- 00000005  8B 86 00000000 R			mov eax, vector[esi]
- 0000000B  E8 00000000 E			call writedec
+ 00000000  BA 0000002C R			mov edx, offset msj_pidex
+ 00000005  E8 00000000 E			call writestring
+ 0000000A  E8 00000000 E			call crlf
+ 0000000F  E8 00000000 E			call readint		;guardamos X en eax, y comparamos cuantos son menores con el vector
 
-						
+ 00000014  8B D8				mov ebx, eax
+
+ 00000016  B8 00000018				mov eax, sizeof vector_10
+ 0000001B  B9 00000004				mov ecx, 4
+ 00000020  BA 00000000				mov edx, 0
+ 00000025  F7 F1				div ecx
+ 00000027  8B C8				mov ecx, eax
+
+ 00000029  B8 00000000				mov eax, 0	;continuar
+ 0000002E  BE 00000000				mov esi, 0
+
+ 00000033					ciclo:
+ 00000033  3B 9E 00000000 R				cmp ebx, vector_10[esi]
+ 00000039  7F 01					jg continuar
+ 0000003B  40							inc eax
+ 0000003C						continuar:
+ 0000003C  83 C6 04					add esi,4
+ 0000003F  E2 F2				loop ciclo
+
+ 00000041  E8 00000000 E			call writedec
 						exit	
 					
- 00000017				main1 ENDP
+ 0000004D				main10 ENDP
 					
-					END main1
-Microsoft (R) Macro Assembler Version 14.34.31937.0	    03/19/23 17:33:57
+					END main10
+Microsoft (R) Macro Assembler Version 14.34.31937.0	    03/25/23 16:37:51
 NombreProgram						     Symbols 2 - 1
 
 
+
+
+Macros:
+
+                N a m e                 Type
+
+IsDefined  . . . . . . . . . . .	Func
+Startup  . . . . . . . . . . . .	Proc
+mDumpMem . . . . . . . . . . . .	Proc
+mDump  . . . . . . . . . . . . .	Proc
+mGotoxy  . . . . . . . . . . . .	Proc
+mReadString  . . . . . . . . . .	Proc
+mShowRegister  . . . . . . . . .	Proc
+mShow  . . . . . . . . . . . . .	Proc
+mWriteLn . . . . . . . . . . . .	Proc
+mWriteSpace  . . . . . . . . . .	Proc
+mWriteString . . . . . . . . . .	Proc
+mWrite . . . . . . . . . . . . .	Proc
 
 
 Structures and Unions:
@@ -152,8 +203,8 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000014 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000017 Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000043 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000004D Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
@@ -260,7 +311,9 @@ WriteStackFrame  . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External
 WriteString  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
 WriteToFile  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
 WriteWindowsMsg  . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
-main1  . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000017 Public STDCALL
+main10 . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000004D Public STDCALL
+  ciclo  . . . . . . . . . . . .	L Near	 00000033 _TEXT	
+  continuar  . . . . . . . . . .	L Near	 0000003C _TEXT	
 printf . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
 scanf  . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
 wsprintfA  . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
@@ -493,8 +546,10 @@ lightGreen . . . . . . . . . . .	Number	 0000000Ah
 lightMagenta . . . . . . . . . .	Number	 0000000Dh   
 lightRed . . . . . . . . . . . .	Number	 0000000Ch   
 magenta  . . . . . . . . . . . .	Number	 00000005h   
+msj_pidex  . . . . . . . . . . .	Byte	 0000002C _DATA	
+msj_println_10 . . . . . . . . .	Byte	 00000018 _DATA	
 red  . . . . . . . . . . . . . .	Number	 00000004h   
-vector . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+vector_10  . . . . . . . . . . .	DWord	 00000000 _DATA	
 white  . . . . . . . . . . . . .	Number	 0000000Fh   
 wsprintf . . . . . . . . . . . .	Text   	 wsprintfA
 yellow . . . . . . . . . . . . .	Number	 0000000Eh   

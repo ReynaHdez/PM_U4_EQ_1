@@ -31,11 +31,6 @@ byte 11,12,13,14,15
 		mov al, vector_5[esi+edi]
 		call writedec	;1
 		
-		; esi / edi = son indices
-
-		; [00 00 00 00] <- eax
-		; [00 00 (00) 00] <- ah			
-		; [00 00 00 (00)] <- al usar al si son byte
 
 
 		exit	

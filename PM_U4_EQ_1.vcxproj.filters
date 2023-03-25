@@ -12,5 +12,12 @@
     <MASM Include="E_1_Mediana_.asm" />
     <MASM Include="P_5_Vector3_.asm" />
     <MASM Include="P_6_Vector4_.asm" />
+    <MASM Include="P_7_RecorridoArreglos_.asm" />
+    <MASM Include="P_8_ValorMayor_.asm" />
+    <MASM Include="P_9_ValorMenor_.asm" />
+    <MASM Include="P_10_CuantosMenoresQueX_.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\PM_U3_EQ_1\PM_U3_EQ_1\Macros.inc" />
   </ItemGroup>
 </Project>

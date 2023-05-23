@@ -4,8 +4,8 @@ TITLE NombrePrograma
 ;Objetivo: Archivo de Ejemplo
 ;
 ; Autore(s):
-;         Apellido Nombre Integrante 1
-;         Apellido Nombre Integrante 2
+;         Hernandez Santos Reyna Margarita
+;         Salas Alardin Luis Fernando 
 
 ; Semestre: 8vo Semestre ISC 
 ;FIN DESCRPICIÓN
@@ -20,23 +20,16 @@ vector dword 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 	mainE1 PROC
 	
 		;Lógica del Programa
-		;mov esi, 4
-		;mov ebx, 2
-		;mov eax, 11
-		;mov edx, 0
-		;div ebx
-		;mul esi multiplicando eax * esi
-		;mov esi, eax
-		;mov eax, vector[esi]
-		;call writedec
-
-		mov esi, 0
+		mov esi, 4
 		mov ebx, 2
-		mov edx, 0
 		mov eax, 11
+		mov edx, 0
 		div ebx
+		mul esi ;multiplicando eax * esi
+		mov esi, eax
 		mov eax, vector[esi]
 		call writedec
+
 		
 		exit	
 	

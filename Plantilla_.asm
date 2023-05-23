@@ -4,13 +4,14 @@ TITLE NombrePrograma
 ;Objetivo: Archivo de Ejemplo
 ;
 ; Autore(s):
-;         Apellido Nombre Integrante 1
-;         Apellido Nombre Integrante 2
+;         Hernandez Santos Reyna Margarita
+;         Salas Alardin Luis Fernando 
 
 ; Semestre: 8vo Semestre ISC 
 ;FIN DESCRPICIÓN
 
 INCLUDE Irvine32.inc  
+INCLUDE Macros.inc
 
 .data
 ; Área de Declaración de Variables

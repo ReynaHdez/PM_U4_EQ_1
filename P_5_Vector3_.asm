@@ -4,8 +4,8 @@ TITLE NombrePrograma
 ;Objetivo: Archivo de Ejemplo
 ;
 ; Autore(s):
-;         Apellido Nombre Integrante 1
-;         Apellido Nombre Integrante 2
+;         Hernandez Santos Reyna Margarita
+;         Salas Alardin Luis Fernando 
 
 ; Semestre: 8vo Semestre ISC 
 ;FIN DESCRPICIÓN
@@ -31,8 +31,6 @@ byte 11,12,13,14,15
 		mov al, vector_5[esi+edi]
 		call writedec	;1
 		
-
-
 		exit	
 	
 	main5 ENDP

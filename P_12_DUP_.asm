@@ -11,29 +11,31 @@ TITLE NombrePrograma
 ;FIN DESCRPICIÓN
 
 INCLUDE Irvine32.inc  
+INCLUDE Macros.inc
 
 .data
 ; Área de Declaración de Variables
-vector byte 10, 20, 30, 40, 50
+vector_12 dword ?	;NULL
+variable_12 dword 3
 
 .code
 
-	main3 PROC
+	main12 PROC
 	
 		;Lógica del Programa
 
-		mov ecx, sizeof vector
+		println "Ingrese el valor de la primera posicion"
+		call readint	;guarda eax
+
 		mov esi, 0
-		ciclo:
-			mov eax, 0
-			mov al, vector[esi]
-			call writeDec
-			call crlf
-			inc esi
-			loop ciclo
-		
+		mov vector_12[esi], eax
+
+		add esi, 4
+		println "Ingrese el segundo valor del vector: "
+		call readint	;guarda eax
+
 		exit	
 	
-	main3 ENDP
+	main12 ENDP
 	
-	END main3
+	END main12

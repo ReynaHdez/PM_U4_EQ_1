@@ -4,8 +4,8 @@ TITLE NombrePrograma
 ;Objetivo: Archivo de Ejemplo
 ;
 ; Autore(s):
-;         Apellido Nombre Integrante 1
-;         Apellido Nombre Integrante 2
+;         Hernandez Santos Reyna Margarita
+;         Salas Alardin Luis Fernando 
 
 ; Semestre: 8vo Semestre ISC 
 ;FIN DESCRPICIÓN
@@ -17,7 +17,7 @@ INCLUDE Macros.inc
 ; Área de Declaración de Variables
 vector_9 dword 10, 14, 19, 1, 3, 4
 
-msj_println_9 db "El valor menor es: "
+
 .code
 
 	main9 PROC
@@ -47,10 +47,8 @@ msj_println_9 db "El valor menor es: "
 
 		mov eax, ebx
 
-			mov edx, offset msj_println_9
-			call writestring
-			call crlf
-			call writedec
+		println "El valor menor es: "
+		call writedec
 		
 		exit	
 	

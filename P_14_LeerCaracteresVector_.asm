@@ -11,29 +11,33 @@ TITLE NombrePrograma
 ;FIN DESCRPICIÓN
 
 INCLUDE Irvine32.inc  
+INCLUDE Macros.inc
 
 .data
 ; Área de Declaración de Variables
-vector byte 10, 20, 30, 40, 50
+vector_14 byte 30 dup(?)
+variable_14 dword 3
 
 .code
 
-	main3 PROC
+	main14 PROC
 	
 		;Lógica del Programa
 
-		mov ecx, sizeof vector
+		mov ecx, 4
 		mov esi, 0
+
 		ciclo:
-			mov eax, 0
-			mov al, vector[esi]
-			call writeDec
-			call crlf
+			call readint
+			mov vector_14[esi], al
 			inc esi
 			loop ciclo
-		
+
+		mov edx, offset vector_14
+		call writestring
+
 		exit	
 	
-	main3 ENDP
+	main14 ENDP
 	
-	END main3
+	END main14

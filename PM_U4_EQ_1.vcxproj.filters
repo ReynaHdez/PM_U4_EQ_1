@@ -16,6 +16,15 @@
     <MASM Include="P_8_ValorMayor_.asm" />
     <MASM Include="P_9_ValorMenor_.asm" />
     <MASM Include="P_10_CuantosMenoresQueX_.asm" />
+    <MASM Include="E_3_Promedio_.asm" />
+    <MASM Include="E_4_Pares_.asm" />
+    <MASM Include="E_2_VectorPotencia_.asm" />
+    <MASM Include="P_11_EntradaVector_.asm" />
+    <MASM Include="P_12_DUP_.asm" />
+    <MASM Include="P_13_LeerCaracteres_.asm" />
+    <MASM Include="P_14_LeerCaracteresVector_.asm" />
+    <MASM Include="P_15_ModificaCadena_.asm" />
+    <MASM Include="P_16_ModificaCadena2_.asm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\PM_U3_EQ_1\PM_U3_EQ_1\Macros.inc" />

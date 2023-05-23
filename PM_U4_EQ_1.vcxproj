@@ -23,8 +23,17 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="E_1_Mediana_.asm" />
+    <MASM Include="E_2_VectorPotencia_.asm" />
+    <MASM Include="E_3_Promedio_.asm" />
+    <MASM Include="E_4_Pares_.asm" />
     <MASM Include="Plantilla_.asm" />
     <MASM Include="P_10_CuantosMenoresQueX_.asm" />
+    <MASM Include="P_11_EntradaVector_.asm" />
+    <MASM Include="P_12_DUP_.asm" />
+    <MASM Include="P_13_LeerCaracteres_.asm" />
+    <MASM Include="P_14_LeerCaracteresVector_.asm" />
+    <MASM Include="P_15_ModificaCadena_.asm" />
+    <MASM Include="P_16_ModificaCadena2_.asm" />
     <MASM Include="P_1_IntroVectores_.asm" />
     <MASM Include="P_2_IntroVectores2_.asm" />
     <MASM Include="P_3_Vector_.asm" />
@@ -101,7 +110,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>main10</EntryPointSymbol>
+      <EntryPointSymbol>mainE4</EntryPointSymbol>
       <ImportLibrary>c:/Irvine</ImportLibrary>
     </Link>
     <MASM>
